@@ -28,8 +28,7 @@ class NetworkManager {
             }
 
             if let data = data,
-               let respSummary = try? JSONDecoder().decode(Response.self, from: data)
-            {
+               let respSummary = try? JSONDecoder().decode(Response.self, from: data) {
                 completionHandler(.success(respSummary.movies))
             }
         })

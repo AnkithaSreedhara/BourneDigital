@@ -11,16 +11,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
         guard let splitViewController = window?.rootViewController as? UISplitViewController else {
             fatalError("Missing SplitViewController")
         }
 
-        guard let masterNavController = splitViewController.viewControllers.first as? UINavigationController,
-              let masterViewController = masterNavController.topViewController as? MoviesCollectionViewController
+        guard let splitMainNavController = splitViewController.viewControllers.first as? UINavigationController,
+             let splitMainViewController = splitMainNavController.topViewController as? MoviesCollectionViewController
         else {
             fatalError("Missing MasterViewController")
         }
@@ -36,7 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         splitViewController.preferredDisplayMode = .oneBesideSecondary
 
         // Make the master view controller the delegate.
-        splitViewController.delegate = masterViewController
+        splitViewController.delegate = splitMainViewController
 
         // Add the display mode button to the navigation bar
         // of the secondary view controller.
@@ -48,7 +44,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
-        // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
+        // The scene re-connect later, as its session was not necessarily discarded.
     }
 
     func sceneDidBecomeActive(_: UIScene) {
