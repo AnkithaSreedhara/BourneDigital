@@ -9,18 +9,17 @@ import Foundation
 import OpenCombine
 
 final class MoviesViewModel {
-    let moviesRetrieved = PassthroughSubject<[Movie],Error>()
-    
-    func fetchMovies(){
+    let moviesRetrieved = PassthroughSubject<[Movie], Error>()
+
+    func fetchMovies() {
         NetworkManager().fetchMovies { [weak self] result in
             guard let weakself = self else { return }
-            switch result{
-            case .success(let movies):
+            switch result {
+            case let .success(movies):
                 weakself.moviesRetrieved.send(movies)
             case .failure:
                 // TODO: HANDLE ERROR
                 break
-                
             }
         }
     }

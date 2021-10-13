@@ -6,6 +6,6 @@
 //
 
 import Foundation
-class ApiConstants{
+class ApiConstants {
     static let moviesURLPath = URL(string: "https://www.dropbox.com/s/q1ins5dsldsojzt/movies.json?dl=1")
 }

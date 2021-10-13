@@ -8,6 +8,7 @@
 import Foundation
 
 // MARK: - Response
+
 class Response: Codable {
     let title: String
     let movies: [Movie]
@@ -19,6 +20,7 @@ class Response: Codable {
 }
 
 // MARK: - Movie
+
 class Movie: Codable {
     let title: String
     let imageHref: String?
@@ -32,4 +34,3 @@ class Movie: Codable {
         self.releaseDate = releaseDate
     }
 }
-
