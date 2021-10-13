@@ -6,50 +6,64 @@
 //
 
 import UIKit
+import OpenCombine
 
+protocol MoviesNavigationProtocol: AnyObject{
+    func showMovieDetail(movie: Movie)
+}
 private let reuseIdentifier = "MoviesCollectionViewCell"
 
 class MoviesCollectionViewController: UICollectionViewController {
-
+    var viewModel: MoviesViewModel!
+    private var bindings = Set<AnyCancellable>()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+                    self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.viewModel = MoviesViewModel.init()
+        setUpVM()
+        setUpBindings()
     }
-
-    /*
+    func setUpVM(){
+        viewModel.fetchMovies()
+    }
+    func setUpBindings(){
+        viewModel.moviesRetrieved.sink(receiveCompletion: { _ in }, receiveValue: { [weak self] _ in
+            guard let weakself = self else { return }
+            DispatchQueue.main.async {
+                weakself.collectionView.reloadData()
+            }
+        }).store(in: &bindings)
+    }
     // MARK: - Navigation
+         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+             guard let navController = segue.destination as? UINavigationController,
+                 let viewController = navController.topViewController as? MovieDetailViewController
+             else {
+                 fatalError("Expected DetailViewController")
+             }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+             viewController.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+             viewController.navigationItem.leftItemsSupplementBackButton = true
+             viewController.detailItem = ""
+         }
+    
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
+//        cell.
     
         return cell
     }
@@ -85,4 +99,18 @@ class MoviesCollectionViewController: UICollectionViewController {
     }
     */
 
+}
+extension MoviesCollectionViewController : UISplitViewControllerDelegate{
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+//
+//        guard let navigationController = secondaryViewController
+//        as? UINavigationController,
+//        let detailViewController = navigationController.topViewController
+//        as? MovieDetailViewController else {
+//          // Fallback to the default
+//          return false
+//        }
+
+        return true
+        }
 }

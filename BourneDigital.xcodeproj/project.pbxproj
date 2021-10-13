@@ -3,10 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		399AA1F0271681C000E8206E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399AA1EF271681C000E8206E /* Response.swift */; };
+		399AA1F1271681C000E8206E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399AA1EF271681C000E8206E /* Response.swift */; };
+		399AA1F42716821600E8206E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399AA1F32716821600E8206E /* Constants.swift */; };
+		399AA1F52716821600E8206E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399AA1F32716821600E8206E /* Constants.swift */; };
+		399AA1F827168AE400E8206E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399AA1F727168AE400E8206E /* NetworkManager.swift */; };
+		399AA1F927168AE400E8206E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399AA1F727168AE400E8206E /* NetworkManager.swift */; };
+		399AA1FB27168B2100E8206E /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399AA1FA27168B2100E8206E /* ApiConstants.swift */; };
+		399AA1FC27168B2100E8206E /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399AA1FA27168B2100E8206E /* ApiConstants.swift */; };
+		399AA1FE2716920B00E8206E /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399AA1FD2716920B00E8206E /* MoviesViewModel.swift */; };
+		399AA1FF2716920B00E8206E /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399AA1FD2716920B00E8206E /* MoviesViewModel.swift */; };
+		399AA202271693EA00E8206E /* OpenCombine in Frameworks */ = {isa = PBXBuildFile; productRef = 399AA201271693EA00E8206E /* OpenCombine */; };
+		399AA204271693EA00E8206E /* OpenCombineDispatch in Frameworks */ = {isa = PBXBuildFile; productRef = 399AA203271693EA00E8206E /* OpenCombineDispatch */; };
+		399AA206271693EA00E8206E /* OpenCombineFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 399AA205271693EA00E8206E /* OpenCombineFoundation */; };
 		964DC28E27033600008E8DE1 /* Movies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964DC28D27033600008E8DE1 /* Movies.storyboard */; };
 		964DC28F27033600008E8DE1 /* Movies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964DC28D27033600008E8DE1 /* Movies.storyboard */; };
 		964DC29027033600008E8DE1 /* Movies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964DC28D27033600008E8DE1 /* Movies.storyboard */; };
@@ -21,7 +34,6 @@
 		964DC29F27033946008E8DE1 /* MoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964DC29C27033946008E8DE1 /* MoviesCollectionViewCell.swift */; };
 		9678A9F327032F4700D1106E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678A9F227032F4700D1106E /* AppDelegate.swift */; };
 		9678A9F527032F4700D1106E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678A9F427032F4700D1106E /* SceneDelegate.swift */; };
-		9678A9F727032F4700D1106E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678A9F627032F4700D1106E /* ViewController.swift */; };
 		9678A9FC27032F4700D1106E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9678A9FB27032F4700D1106E /* Assets.xcassets */; };
 		9678A9FF27032F4700D1106E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9678A9FD27032F4700D1106E /* LaunchScreen.storyboard */; };
 		9678AA0A27032F4700D1106E /* BourneDigitalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678AA0927032F4700D1106E /* BourneDigitalTests.swift */; };
@@ -46,6 +58,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		399AA1EF271681C000E8206E /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		399AA1F32716821600E8206E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		399AA1F727168AE400E8206E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		399AA1FA27168B2100E8206E /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		399AA1FD2716920B00E8206E /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
 		964DC28D27033600008E8DE1 /* Movies.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Movies.storyboard; sourceTree = "<group>"; };
 		964DC293270338C7008E8DE1 /* MoviesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCollectionViewController.swift; sourceTree = "<group>"; };
 		964DC29827033907008E8DE1 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
@@ -53,7 +70,6 @@
 		9678A9EF27032F4700D1106E /* BourneDigital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BourneDigital.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9678A9F227032F4700D1106E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9678A9F427032F4700D1106E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9678A9F627032F4700D1106E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9678A9FB27032F4700D1106E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9678A9FE27032F4700D1106E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9678AA0027032F4700D1106E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,6 +86,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				399AA204271693EA00E8206E /* OpenCombineDispatch in Frameworks */,
+				399AA206271693EA00E8206E /* OpenCombineFoundation in Frameworks */,
+				399AA202271693EA00E8206E /* OpenCombine in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,9 +109,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		399AA1EE271680E400E8206E /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				399AA1EF271681C000E8206E /* Response.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		399AA1F2271681F700E8206E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9678A9F227032F4700D1106E /* AppDelegate.swift */,
+				9678A9F427032F4700D1106E /* SceneDelegate.swift */,
+				9678A9FB27032F4700D1106E /* Assets.xcassets */,
+				9678A9FD27032F4700D1106E /* LaunchScreen.storyboard */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		399AA1F62716826600E8206E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				399AA1F32716821600E8206E /* Constants.swift */,
+				399AA1F727168AE400E8206E /* NetworkManager.swift */,
+				399AA1FA27168B2100E8206E /* ApiConstants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		964DC291270336C6008E8DE1 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
+				399AA1EE271680E400E8206E /* Objects */,
 				964DC297270338F2008E8DE1 /* MovieDetail */,
 				964DC292270338B5008E8DE1 /* Movies */,
 				964DC28D27033600008E8DE1 /* Movies.storyboard */,
@@ -105,6 +154,7 @@
 			children = (
 				964DC293270338C7008E8DE1 /* MoviesCollectionViewController.swift */,
 				964DC29C27033946008E8DE1 /* MoviesCollectionViewCell.swift */,
+				399AA1FD2716920B00E8206E /* MoviesViewModel.swift */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -140,13 +190,10 @@
 		9678A9F127032F4700D1106E /* BourneDigital */ = {
 			isa = PBXGroup;
 			children = (
-				964DC291270336C6008E8DE1 /* Movies */,
-				9678A9F227032F4700D1106E /* AppDelegate.swift */,
-				9678A9F427032F4700D1106E /* SceneDelegate.swift */,
-				9678A9F627032F4700D1106E /* ViewController.swift */,
-				9678A9FB27032F4700D1106E /* Assets.xcassets */,
-				9678A9FD27032F4700D1106E /* LaunchScreen.storyboard */,
 				9678AA0027032F4700D1106E /* Info.plist */,
+				399AA1F62716826600E8206E /* Helpers */,
+				399AA1F2271681F700E8206E /* Common */,
+				964DC291270336C6008E8DE1 /* Movies */,
 			);
 			path = BourneDigital;
 			sourceTree = "<group>";
@@ -185,6 +232,11 @@
 			dependencies = (
 			);
 			name = BourneDigital;
+			packageProductDependencies = (
+				399AA201271693EA00E8206E /* OpenCombine */,
+				399AA203271693EA00E8206E /* OpenCombineDispatch */,
+				399AA205271693EA00E8206E /* OpenCombineFoundation */,
+			);
 			productName = BourneDigital;
 			productReference = 9678A9EF27032F4700D1106E /* BourneDigital.app */;
 			productType = "com.apple.product-type.application";
@@ -256,6 +308,9 @@
 				Base,
 			);
 			mainGroup = 9678A9E627032F4700D1106E;
+			packageReferences = (
+				399AA200271693EA00E8206E /* XCRemoteSwiftPackageReference "OpenCombine" */,
+			);
 			productRefGroup = 9678A9F027032F4700D1106E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -301,12 +356,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9678A9F727032F4700D1106E /* ViewController.swift in Sources */,
 				964DC29927033907008E8DE1 /* MovieDetailViewController.swift in Sources */,
 				964DC294270338C7008E8DE1 /* MoviesCollectionViewController.swift in Sources */,
 				964DC29D27033946008E8DE1 /* MoviesCollectionViewCell.swift in Sources */,
 				9678A9F327032F4700D1106E /* AppDelegate.swift in Sources */,
+				399AA1F827168AE400E8206E /* NetworkManager.swift in Sources */,
+				399AA1FB27168B2100E8206E /* ApiConstants.swift in Sources */,
 				9678A9F527032F4700D1106E /* SceneDelegate.swift in Sources */,
+				399AA1F0271681C000E8206E /* Response.swift in Sources */,
+				399AA1F42716821600E8206E /* Constants.swift in Sources */,
+				399AA1FE2716920B00E8206E /* MoviesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +376,12 @@
 				9678AA0A27032F4700D1106E /* BourneDigitalTests.swift in Sources */,
 				964DC29A27033907008E8DE1 /* MovieDetailViewController.swift in Sources */,
 				964DC295270338C7008E8DE1 /* MoviesCollectionViewController.swift in Sources */,
+				399AA1F927168AE400E8206E /* NetworkManager.swift in Sources */,
+				399AA1FF2716920B00E8206E /* MoviesViewModel.swift in Sources */,
+				399AA1FC27168B2100E8206E /* ApiConstants.swift in Sources */,
 				964DC29E27033946008E8DE1 /* MoviesCollectionViewCell.swift in Sources */,
+				399AA1F1271681C000E8206E /* Response.swift in Sources */,
+				399AA1F52716821600E8206E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,6 +695,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		399AA200271693EA00E8206E /* XCRemoteSwiftPackageReference "OpenCombine" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OpenCombine/OpenCombine";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		399AA201271693EA00E8206E /* OpenCombine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 399AA200271693EA00E8206E /* XCRemoteSwiftPackageReference "OpenCombine" */;
+			productName = OpenCombine;
+		};
+		399AA203271693EA00E8206E /* OpenCombineDispatch */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 399AA200271693EA00E8206E /* XCRemoteSwiftPackageReference "OpenCombine" */;
+			productName = OpenCombineDispatch;
+		};
+		399AA205271693EA00E8206E /* OpenCombineFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 399AA200271693EA00E8206E /* XCRemoteSwiftPackageReference "OpenCombine" */;
+			productName = OpenCombineFoundation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9678A9E727032F4700D1106E /* Project object */;
 }

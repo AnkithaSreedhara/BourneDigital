@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qim-eb-4K2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qim-eb-4K2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="6eu-c6-dkH">
+            <objects>
+                <navigationController id="YUh-1T-laf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rn4-Lg-6wK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lwt-81-r52" kind="relationship" relationship="rootViewController" id="DHu-xj-woV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jjm-fK-HHw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-620" y="258"/>
+        </scene>
         <!--MovieDetailViewController-->
         <scene sceneID="151-Gd-cVH">
             <objects>
@@ -18,16 +35,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ikB-y1-QnB">
-                                <rect key="frame" x="20" y="114" width="374" height="448"/>
+                                <rect key="frame" x="20" y="26" width="374" height="448"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cL-KL-Q0w">
-                                <rect key="frame" x="20" y="582" width="374" height="24"/>
+                                <rect key="frame" x="20" y="494" width="374" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="firstBaseline" spacing="263" translatesAutoresizingMaskIntoConstraints="NO" id="FaI-yN-oJF">
-                                <rect key="frame" x="20" y="626" width="374" height="21"/>
+                                <rect key="frame" x="20" y="538" width="374" height="21"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u79-gE-l78">
                                         <rect key="frame" x="0.0" y="0.0" width="44" height="20.5"/>
@@ -59,6 +76,7 @@
                             <constraint firstItem="ikB-y1-QnB" firstAttribute="top" secondItem="vKE-kU-86e" secondAttribute="top" constant="26" id="nm1-09-NQB"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ROU-Mc-bJN"/>
                     <connections>
                         <outlet property="movieImageView" destination="ikB-y1-QnB" id="3Oq-yx-Tdq"/>
                         <outlet property="movieTitleLabel" destination="8cL-KL-Q0w" id="P1R-Xe-bht"/>
@@ -68,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nvr-g3-kmL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-620" y="237"/>
+            <point key="canvasLocation" x="599" y="258"/>
         </scene>
         <!--MoviesCollectionViewController-->
         <scene sceneID="CyV-G0-kAp">
@@ -77,7 +95,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="sav-w6-AQr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wn7-Qh-8tY">
                             <size key="itemSize" width="188" height="190"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -116,6 +134,7 @@
                                 <connections>
                                     <outlet property="movieImageView" destination="9UH-XD-NFZ" id="myI-1Z-YPZ"/>
                                     <outlet property="movieTitleLabel" destination="uFK-Td-drp" id="JMX-LF-mbo"/>
+                                    <segue destination="YUh-1T-laf" kind="showDetail" id="OK3-ZA-oZu"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -128,7 +147,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vUX-0L-VwJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="163.768115942029" y="-409.15178571428572"/>
+            <point key="canvasLocation" x="742" y="-409"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DYy-EW-xzH">
@@ -146,13 +165,13 @@
             </objects>
             <point key="canvasLocation" x="-619" y="-409"/>
         </scene>
-        <!--Split View Controller-->
+        <!--SplitViewController-->
         <scene sceneID="wLH-5v-HAG">
             <objects>
-                <splitViewController allowDoubleColumnStyle="YES" id="Qim-eb-4K2" sceneMemberID="viewController">
+                <splitViewController title="SplitViewController" id="Qim-eb-4K2" sceneMemberID="viewController">
                     <connections>
                         <segue destination="AK3-zb-c7S" kind="relationship" relationship="masterViewController" id="XbG-Yn-IY8"/>
-                        <segue destination="lwt-81-r52" kind="relationship" relationship="detailViewController" id="Ktk-ff-tgy"/>
+                        <segue destination="YUh-1T-laf" kind="relationship" relationship="detailViewController" id="6Pb-mD-L3o"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OEK-oR-Y5B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -160,9 +179,15 @@
             <point key="canvasLocation" x="-1509" y="-105"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="OK3-ZA-oZu"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

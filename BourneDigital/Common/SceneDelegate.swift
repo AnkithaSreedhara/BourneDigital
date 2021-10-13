@@ -17,6 +17,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+            guard let splitViewController = self.window?.rootViewController as? UISplitViewController else {
+                fatalError("Missing SplitViewController")
+            }
+
+            guard let masterNavController = splitViewController.viewControllers.first as? UINavigationController,
+                let masterViewController = masterNavController.topViewController as? MoviesCollectionViewController else {
+                fatalError("Missing MasterViewController")
+            }
+
+            guard let navigationController = splitViewController.viewControllers.last as? UINavigationController,
+                let detailViewController = navigationController.topViewController else {
+                fatalError("Missing detail view controller")
+            }
+
+            // Configure the SplitViewController to prefer to always
+            // show both master and detail views.
+        splitViewController.preferredDisplayMode = .oneBesideSecondary
+
+            // Make the master view controller the delegate.
+            splitViewController.delegate = masterViewController
+
+            // Add the display mode button to the navigation bar
+            // of the secondary view controller.
+            detailViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+            detailViewController.navigationItem.leftItemsSupplementBackButton = true
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
