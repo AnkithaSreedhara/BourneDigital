@@ -21,7 +21,13 @@ class Response: Codable {
 
 // MARK: - Movie
 
-class Movie: Codable {
+class Movie: Codable, Equatable {
+    static func == (lhs: Movie, rhs: Movie) -> Bool {
+        return lhs.title == rhs.title &&
+        lhs.imageHref == rhs.imageHref &&
+        lhs.rating == rhs.rating &&
+        lhs.releaseDate == rhs.releaseDate
+    }
     let title: String
     let imageHref: String?
     let rating: Double?

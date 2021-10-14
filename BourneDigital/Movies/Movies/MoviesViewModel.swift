@@ -6,17 +6,22 @@
 //
 
 import Foundation
-import OpenCombine
-
+protocol MoviesRespFetchProtocol: AnyObject {
+    func moviesFetched()
+}
 final class MoviesViewModel {
-    let moviesRetrieved = PassthroughSubject<[Movie], Error>()
-
+    weak var moviesRespFetchProtocolDelegate: MoviesRespFetchProtocol?
+    var moviesArray = [Movie]()
+    init(delegate: MoviesRespFetchProtocol) {
+        moviesRespFetchProtocolDelegate = delegate
+    }
     func fetchMovies() {
         NetworkManager().fetchMovies { [weak self] result in
             guard let weakself = self else { return }
             switch result {
             case let .success(movies):
-                weakself.moviesRetrieved.send(movies)
+                weakself.moviesArray = movies
+                weakself.moviesRespFetchProtocolDelegate?.moviesFetched()
             case .failure:
                 // TODO: HANDLE ERROR
                 break

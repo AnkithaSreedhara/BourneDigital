@@ -29,9 +29,15 @@ class NetworkManager {
 
             if let data = data,
                let respSummary = try? JSONDecoder().decode(Response.self, from: data) {
-                completionHandler(.success(respSummary.movies))
+                completionHandler(.success(self.setData(resp: respSummary)))
             }
         })
         task.resume()
+    }
+    func setData(resp: Response) -> [Movie] {
+        if resp.title == "Movies" {
+            return resp.movies
+        }
+        return []
     }
 }
