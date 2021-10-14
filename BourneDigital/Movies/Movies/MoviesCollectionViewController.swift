@@ -7,19 +7,15 @@
 
 import UIKit
 
-protocol MoviesNavigationProtocol: AnyObject {
-    func showMovieDetail(movie: Movie)
-}
-
 private let reuseIdentifier = "MoviesCollectionViewCell"
 
 class MoviesCollectionViewController: UICollectionViewController,
                                     UICollectionViewDelegateFlowLayout,
                                     MoviesRespFetchProtocol {
     var viewModel: MoviesViewModel!
-    weak var moviesNavigationProtocolDelegate: MoviesNavigationProtocol?
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         viewModel = MoviesViewModel(delegate: self)
         setUpVM()
     }
@@ -42,9 +38,6 @@ class MoviesCollectionViewController: UICollectionViewController,
         else {
             fatalError("Expected DetailViewController")
         }
-
-        viewController.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-        viewController.navigationItem.leftItemsSupplementBackButton = true
         viewController.viewModel = MovieDetailViewModel(viewModel.moviesArray[indexOfCell.row])
     }
 
@@ -62,6 +55,7 @@ class MoviesCollectionViewController: UICollectionViewController,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                       for: indexPath) as? MoviesCollectionViewCell
+        cell?.resetData()
         cell?.movieTitleLabel.text = viewModel.moviesArray[indexPath.row].title
         ImageDownloadManager.shared.downloadImage(viewModel.moviesArray[indexPath.row].imageHref ?? "",
                                                   indexPath: indexPath) {(image, _, indexPathh, _) in
@@ -88,9 +82,6 @@ class MoviesCollectionViewController: UICollectionViewController,
     }
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         collectionView.reloadData()
-    }
-    override func collectionView(_ : UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        moviesNavigationProtocolDelegate?.showMovieDetail(movie: viewModel.moviesArray[indexPath.row])
     }
 }
 

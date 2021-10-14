@@ -13,4 +13,8 @@ class MoviesCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    func resetData(){
+        self.movieImageView.image = UIImage()
+        self.movieTitleLabel.text = ""
+    }
 }

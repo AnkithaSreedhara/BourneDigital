@@ -5,14 +5,16 @@
 //  Created by Sai Ankitha Sreedhara on 14/10/21.
 //
 
-/* import Foundation
+ import Foundation
 import UIKit
 final class MoviesCoordinator {
-    func start(vc: UIViewController) {
-        guard let moviesVC = vc as? MoviesCollectionViewController else {
+   /* var moviesNavVC: UIViewController?
+    init(viewController: UIViewController) {
+        guard let moviesVC = viewController as? MoviesCollectionViewController else {
             print("Some VC received while expecting MoviesCollectionViewController")
             return
         }
+        moviesNavVC = moviesVC
         moviesVC.moviesNavigationProtocolDelegate = self
     }
 }
@@ -20,6 +22,7 @@ extension MoviesCoordinator: MoviesNavigationProtocol {
     func showMovieDetail(movie: Movie) {
         let movieDetailVC = MovieDetailViewController()
         movieDetailVC.viewModel = MovieDetailViewModel(movie)
-//        self.prr
-    }
-} */
+        moviesNavVC?.performSegue(withIdentifier: "showDetail", sender: self)
+    }*/
+    
+}
